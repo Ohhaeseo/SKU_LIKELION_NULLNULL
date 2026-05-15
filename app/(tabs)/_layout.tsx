@@ -1,59 +1,125 @@
-import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Tabs } from 'expo-router';
+import React from 'react';
+import { Text, View } from 'react-native';
 
+import { FloatingAiAssistant } from '@/components/FloatingAiAssistant';
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
+export const unstable_settings = {
+  initialRouteName: 'home',
+};
+
+function TabBarIcon({
+  name,
+  color,
+  focused,
+  isHome,
+}: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
+  focused?: boolean;
+  isHome?: boolean;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  if (isHome) {
+    return (
+      <View
+        style={{
+          width: 60,
+          height: 60,
+          borderRadius: 30,
+          backgroundColor: focused ? Colors.light.tint : '#8A8F9C',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderWidth: 8,
+          borderColor: '#FFFFFF',
+          marginBottom: 24,
+          shadowColor: '#6F8DEB',
+          shadowOpacity: 0.25,
+          shadowRadius: 10,
+          shadowOffset: { width: 0, height: 5 },
+        }}
+      >
+        <FontAwesome name="home" size={26} color="#FFFFFF" />
+      </View>
+    );
+  }
+
+  return <FontAwesome name={name} size={24} color={color} />;
+}
+
+function NullIcon({ color }: { color: string }) {
+  return <Text style={{ color, fontSize: 28, fontWeight: '900', lineHeight: 30 }}>N</Text>;
 }
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const colors = Colors.light;
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+    <View style={{ flex: 1 }}>
+      <Tabs
+        initialRouteName="home"
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: colors.tint,
+          tabBarInactiveTintColor: '#B8B8B8',
+          tabBarStyle: {
+            height: 92,
+            paddingTop: 13,
+            paddingBottom: 14,
+            backgroundColor: colors.card,
+            borderTopColor: '#F0F0F0',
+            borderTopWidth: 1,
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          tabBarLabelStyle: {
+            fontSize: 11,
+            fontWeight: '700',
+            marginTop: 2,
+          },
         }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="map"
+          options={{
+            title: '지도',
+            tabBarIcon: ({ color }) => <TabBarIcon name="map-o" color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="transit"
+          options={{
+            title: '일정',
+            tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="home"
+          options={{
+            title: '',
+            tabBarIcon: ({ focused }) => <TabBarIcon name="home" color={colors.tint} focused={focused} isHome />,
+            tabBarItemStyle: {
+              transform: [{ translateY: -10 }],
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="two"
+          options={{
+            title: '널널 AI',
+            tabBarIcon: ({ color }) => <NullIcon color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="mypage"
+          options={{
+            title: '마이 페이지',
+            tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          }}
+        />
+      </Tabs>
+      <FloatingAiAssistant />
+    </View>
   );
 }

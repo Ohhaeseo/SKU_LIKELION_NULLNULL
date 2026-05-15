@@ -1,0 +1,40 @@
+{
+  "cityData": [
+    {
+      "areaName": "광화문·덕수궁",
+      "areaCode": "POI009",
+      "congestLevel": "약간 붐빔",
+      "congestMessage": "사람들이 몰려있을 가능성이 크고 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.",
+      "populationMin": 50000,
+      "populationMax": 52000,
+      "latitude": 37.571525,
+      "longitude": 126.977170,
+      "color": "rgba(245, 158, 11, 0.5)",
+      "strokeColor": "rgba(245, 158, 11, 1)"
+    },
+    {
+      "areaName": "홍대입구역",
+      "areaCode": "POI014",
+      "congestLevel": "매우 붐빔",
+      "congestMessage": "발 디딜 틈이 없을 정도로 사람이 많아요.",
+      "populationMin": 60000,
+      "populationMax": 65000,
+      "latitude": 37.5568,
+      "longitude": 126.9237,
+      "color": "rgba(239, 68, 68, 0.5)",
+      "strokeColor": "rgba(239, 68, 68, 1)"
+    },
+    {
+      "areaName": "여의도 한강공원",
+      "areaCode": "POI022",
+      "congestLevel": "여유",
+      "congestMessage": "사람이 적어 이동이 자유로워요.",
+      "populationMin": 10000,
+      "populationMax": 12000,
+      "latitude": 37.5271,
+      "longitude": 126.9328,
+      "color": "rgba(16, 185, 129, 0.5)",
+      "strokeColor": "rgba(16, 185, 129, 1)"
+    }
+  ]
+}

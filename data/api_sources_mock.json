@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "mode": "Mock first",
+    "verdict": "실서비스 호출에는 대부분 인증키 또는 활용신청이 필요합니다.",
+    "updatedAt": "2026-05-08",
+    "uxPrinciple": "관광객에게는 API 상태를 기술 용어보다 신뢰 상태로 보여줍니다."
+  },
+  "sources": [
+    {
+      "id": "seoul-citydata",
+      "name": "서울 실시간 도시데이터",
+      "provider": "서울열린데이터광장",
+      "purpose": "주요 장소 실시간 인구, 교통, 날씨, 행사 데이터",
+      "keyStatus": "인증키 필요",
+      "requestStatus": "인증키 신청 필요",
+      "freeTier": "무료",
+      "canCallWithoutKey": false,
+      "mockPolicy": "키가 없으면 광화문·덕수궁 샘플 수준만 확인 가능하므로 MVP에서는 mock으로 대체",
+      "productUse": "장소별 현재 혼잡도와 30분 지연 인구 데이터",
+      "url": "https://data.seoul.go.kr"
+    },
+    {
+      "id": "subway-ridership",
+      "name": "서울교통공사 승하차 인원",
+      "provider": "공공데이터포털",
+      "purpose": "역별 승하차 패턴을 혼잡도 보정 proxy로 활용",
+      "keyStatus": "오픈API는 활용신청/인증키 필요",
+      "requestStatus": "파일 다운로드는 로그인 없이 가능, API는 신청 필요",
+      "freeTier": "무료",
+      "canCallWithoutKey": false,
+      "mockPolicy": "공개 데이터는 실시간보다 연간/시간대 통계 성격이 강해 현재 MVP에서는 예측 보정용 mock으로 대체",
+      "productUse": "역별 시간대 혼잡 패턴, 출구 혼잡 가중치",
+      "url": "https://www.data.go.kr"
+    },
+    {
+      "id": "kma-forecast",
+      "name": "기상청 단기예보",
+      "provider": "공공데이터포털",
+      "purpose": "강수확률, 기온, 날씨 기반 대체 장소 추천",
+      "keyStatus": "ServiceKey 필수",
+      "requestStatus": "활용신청 필요",
+      "freeTier": "무료",
+      "canCallWithoutKey": false,
+      "mockPolicy": "ServiceKey 발급 전까지 강수확률/기온 mock으로 대체",
+      "productUse": "비·폭염·한파 시 실내 장소 추천",
+      "url": "https://www.data.go.kr"
+    },
+    {
+      "id": "odsay",
+      "name": "ODsay 대중교통 길찾기",
+      "provider": "아로정보기술",
+      "purpose": "출발지에서 목적지까지 대중교통 경로 탐색",
+      "keyStatus": "API Key 필수",
+      "requestStatus": "애플리케이션 등록 필요",
+      "freeTier": "Basic 무료 6개월, 1,000회/일",
+      "canCallWithoutKey": false,
+      "mockPolicy": "좌표 기반 경로 후보를 mock으로 구성하고 추후 ODsay 결과에 혼잡 점수를 결합",
+      "productUse": "빠른 경로, 균형 경로, 널널 경로 비교",
+      "url": "https://lab.odsay.com"
+    }
+  ],
+  "runtime": [
+    {
+      "title": "현재 개발 모드",
+      "value": "Mock API",
+      "description": "실제 키 없이도 홈, 경고, 이동, 장소 상세이 모두 작동합니다."
+    },
+    {
+      "title": "실서비스 전환 방식",
+      "value": "Adapter 교체",
+      "description": "화면은 유지하고 mock JSON을 API adapter 응답으로 바꾸는 구조가 적합합니다."
+    },
+    {
+      "title": "보안 원칙",
+      "value": "서버 프록시 권장",
+      "description": "모바일 앱에 공공/상용 API 키를 직접 넣지 않고 백엔드에서 호출해야 합니다."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "route": {
+    "start": "현재 위치 (강남역)",
+    "end": "홍대입구역",
+    "totalTime": "45분",
+    "totalWalk": "8분",
+    "payment": "1,400원",
+    "path": [
+      {
+        "type": "walk",
+        "description": "강남역 2호선까지 도보 이동",
+        "time": "5분"
+      },
+      {
+        "type": "subway",
+        "line": "2호선",
+        "color": "#00A84D",
+        "description": "강남역 승차 ➔ 홍대입구역 하차",
+        "time": "37분",
+        "stops": 17
+      },
+      {
+        "type": "walk",
+        "description": "홍대입구역 9번 출구로 도보 이동",
+        "time": "3분"
+      }
+    ]
+  }
+}

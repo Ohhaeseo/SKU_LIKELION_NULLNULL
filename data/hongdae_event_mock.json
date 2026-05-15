@@ -1,0 +1,41 @@
+{
+  "eventScenario": {
+    "name": "홍대입구 뮤직 페스티벌 (이상치 시나리오)",
+    "date": "2026-05-17",
+    "dayOfWeek": "토요일",
+    "eventName": "홍대 인디뮤직 페스티벌 2026",
+    "eventCapacity": 15000,
+    "weather": {
+      "condition": "맑음",
+      "temperature": 25,
+      "humidity": 50,
+      "rainProbability": 5
+    }
+  },
+  "hourlyData": [
+    { "time": "08:00", "seoulApiPopulation": 12000, "subwayExit": 380,  "aiNowcast": 12800,  "aiForecast30min": 18000,  "level": "여유",     "levelCode": 1 },
+    { "time": "09:00", "seoulApiPopulation": 18000, "subwayExit": 720,  "aiNowcast": 21000,  "aiForecast30min": 28000,  "level": "여유",     "levelCode": 1 },
+    { "time": "10:00", "seoulApiPopulation": 25000, "subwayExit": 1450, "aiNowcast": 32000,  "aiForecast30min": 42000,  "level": "보통",     "levelCode": 2 },
+    { "time": "11:00", "seoulApiPopulation": 35000, "subwayExit": 2100, "aiNowcast": 45000,  "aiForecast30min": 58000,  "level": "약간 붐빔", "levelCode": 2 },
+    { "time": "12:00", "seoulApiPopulation": 48000, "subwayExit": 2800, "aiNowcast": 60000,  "aiForecast30min": 72000,  "level": "붐빔",     "levelCode": 3 },
+    { "time": "13:00", "seoulApiPopulation": 58000, "subwayExit": 3200, "aiNowcast": 72000,  "aiForecast30min": 82000,  "level": "매우 붐빔", "levelCode": 4 },
+    { "time": "14:00", "seoulApiPopulation": 68000, "subwayExit": 3500, "aiNowcast": 81000,  "aiForecast30min": 88000,  "level": "⚠️ 위험",  "levelCode": 5 },
+    { "time": "15:00", "seoulApiPopulation": 75000, "subwayExit": 2800, "aiNowcast": 85000,  "aiForecast30min": 82000,  "level": "⚠️ 위험",  "levelCode": 5 },
+    { "time": "16:00", "seoulApiPopulation": 78000, "subwayExit": 2200, "aiNowcast": 82000,  "aiForecast30min": 75000,  "level": "⚠️ 위험",  "levelCode": 5 },
+    { "time": "17:00", "seoulApiPopulation": 72000, "subwayExit": 1800, "aiNowcast": 74000,  "aiForecast30min": 65000,  "level": "매우 붐빔", "levelCode": 4 },
+    { "time": "18:00", "seoulApiPopulation": 60000, "subwayExit": 1400, "aiNowcast": 62000,  "aiForecast30min": 55000,  "level": "매우 붐빔", "levelCode": 4 }
+  ],
+  "aiAnalysis": {
+    "anomalyDetected": true,
+    "anomalyTime": "10:00",
+    "anomalyDescription": "10시 기준 지하철 하차 인원이 평소 토요일 대비 213% 폭증. AI가 대규모 행사/이벤트 유입으로 판단.",
+    "criticalAlert": {
+      "triggered": true,
+      "triggerTime": "12:30",
+      "message": "🚨 긴급 경고: AI 분석 결과, 현재 홍대입구 추정 인구가 60,000명을 돌파했습니다. 30분 뒤 72,000명(위험 단계 임계점)에 도달할 것으로 예측됩니다. 현재 진입을 자제해 주세요.",
+      "seoulApiAtThatTime": 48000,
+      "aiCorrectedAtThatTime": 60000,
+      "gapPercentage": "25% (서울시 데이터 대비 AI 추정값이 25% 높음 — 이것이 30분 지연의 실체)"
+    }
+  }
+}

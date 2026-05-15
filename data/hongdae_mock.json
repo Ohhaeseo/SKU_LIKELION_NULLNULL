@@ -1,0 +1,97 @@
+{
+  "location": {
+    "id": "hongdae",
+    "name": "홍대입구역",
+    "nameEn": "Hongdae Station Area",
+    "district": "마포구",
+    "category": "핫플레이스",
+    "coordinates": {
+      "lat": 37.5571,
+      "lng": 126.9244
+    },
+    "nearbyStations": ["홍대입구역 2호선", "홍대입구역 공항철도"],
+    "capacity": {
+      "comfortable": 35000,
+      "moderate": 50000,
+      "crowded": 65000,
+      "dangerous": 80000
+    }
+  },
+  "populationData": {
+    "date": "2026-05-10",
+    "dayOfWeek": "토요일",
+    "isHoliday": false,
+    "weather": {
+      "condition": "맑음",
+      "temperature": 22,
+      "humidity": 45,
+      "rainProbability": 10
+    },
+    "hourlyData": [
+      { "time": "00:00", "seoulApiPopulation": 8200,  "subwayExit": 120,  "aiNowcast": 8350,  "aiForecast30min": 7100,  "level": "여유", "levelCode": 1 },
+      { "time": "01:00", "seoulApiPopulation": 5800,  "subwayExit": 45,   "aiNowcast": 5600,  "aiForecast30min": 4200,  "level": "여유", "levelCode": 1 },
+      { "time": "02:00", "seoulApiPopulation": 3500,  "subwayExit": 10,   "aiNowcast": 3400,  "aiForecast30min": 2800,  "level": "여유", "levelCode": 1 },
+      { "time": "03:00", "seoulApiPopulation": 2100,  "subwayExit": 5,    "aiNowcast": 2050,  "aiForecast30min": 1900,  "level": "여유", "levelCode": 1 },
+      { "time": "04:00", "seoulApiPopulation": 1500,  "subwayExit": 3,    "aiNowcast": 1480,  "aiForecast30min": 1600,  "level": "여유", "levelCode": 1 },
+      { "time": "05:00", "seoulApiPopulation": 1800,  "subwayExit": 15,   "aiNowcast": 1850,  "aiForecast30min": 2500,  "level": "여유", "levelCode": 1 },
+      { "time": "06:00", "seoulApiPopulation": 3200,  "subwayExit": 80,   "aiNowcast": 3400,  "aiForecast30min": 5200,  "level": "여유", "levelCode": 1 },
+      { "time": "07:00", "seoulApiPopulation": 6500,  "subwayExit": 210,  "aiNowcast": 6800,  "aiForecast30min": 9500,  "level": "여유", "levelCode": 1 },
+      { "time": "08:00", "seoulApiPopulation": 12000, "subwayExit": 380,  "aiNowcast": 12500, "aiForecast30min": 16000, "level": "여유", "levelCode": 1 },
+      { "time": "09:00", "seoulApiPopulation": 18000, "subwayExit": 520,  "aiNowcast": 18800, "aiForecast30min": 22000, "level": "여유", "levelCode": 1 },
+      { "time": "10:00", "seoulApiPopulation": 24000, "subwayExit": 680,  "aiNowcast": 25200, "aiForecast30min": 29000, "level": "여유", "levelCode": 1 },
+      { "time": "11:00", "seoulApiPopulation": 31000, "subwayExit": 850,  "aiNowcast": 32500, "aiForecast30min": 38000, "level": "보통", "levelCode": 2 },
+      { "time": "12:00", "seoulApiPopulation": 38000, "subwayExit": 1020, "aiNowcast": 40200, "aiForecast30min": 45000, "level": "약간 붐빔", "levelCode": 2 },
+      { "time": "13:00", "seoulApiPopulation": 42000, "subwayExit": 1150, "aiNowcast": 44800, "aiForecast30min": 52000, "level": "약간 붐빔", "levelCode": 2 },
+      { "time": "14:00", "seoulApiPopulation": 48000, "subwayExit": 1280, "aiNowcast": 51500, "aiForecast30min": 58000, "level": "붐빔", "levelCode": 3 },
+      { "time": "15:00", "seoulApiPopulation": 55000, "subwayExit": 1420, "aiNowcast": 59200, "aiForecast30min": 65000, "level": "붐빔", "levelCode": 3 },
+      { "time": "16:00", "seoulApiPopulation": 61000, "subwayExit": 1380, "aiNowcast": 64500, "aiForecast30min": 62000, "level": "매우 붐빔", "levelCode": 4 },
+      { "time": "17:00", "seoulApiPopulation": 58000, "subwayExit": 1250, "aiNowcast": 60000, "aiForecast30min": 55000, "level": "매우 붐빔", "levelCode": 4 },
+      { "time": "18:00", "seoulApiPopulation": 52000, "subwayExit": 1100, "aiNowcast": 53500, "aiForecast30min": 50000, "level": "붐빔", "levelCode": 3 },
+      { "time": "19:00", "seoulApiPopulation": 48000, "subwayExit": 980,  "aiNowcast": 49200, "aiForecast30min": 46000, "level": "붐빔", "levelCode": 3 },
+      { "time": "20:00", "seoulApiPopulation": 45000, "subwayExit": 850,  "aiNowcast": 46000, "aiForecast30min": 42000, "level": "약간 붐빔", "levelCode": 2 },
+      { "time": "21:00", "seoulApiPopulation": 40000, "subwayExit": 720,  "aiNowcast": 41000, "aiForecast30min": 35000, "level": "약간 붐빔", "levelCode": 2 },
+      { "time": "22:00", "seoulApiPopulation": 32000, "subwayExit": 580,  "aiNowcast": 33000, "aiForecast30min": 25000, "level": "보통", "levelCode": 2 },
+      { "time": "23:00", "seoulApiPopulation": 22000, "subwayExit": 350,  "aiNowcast": 22500, "aiForecast30min": 15000, "level": "여유", "levelCode": 1 }
+    ]
+  },
+  "aiAnalysis": {
+    "currentTime": "14:30",
+    "seoulApiLastUpdate": "14:00",
+    "dataDelay": "30분 지연",
+    "aiCorrectedNow": {
+      "estimatedPopulation": 54200,
+      "confidence": 0.87,
+      "level": "붐빔",
+      "levelCode": 3,
+      "description": "서울시 데이터(14:00 기준 48,000명)에 비해 실제 현재 인구는 약 13% 더 많을 것으로 추정됩니다."
+    },
+    "aiForecast": {
+      "time": "15:00",
+      "estimatedPopulation": 62000,
+      "confidence": 0.82,
+      "level": "매우 붐빔",
+      "levelCode": 4,
+      "trend": "increasing",
+      "description": "30분 뒤 홍대입구 인구는 약 62,000명으로 '매우 붐빔' 단계에 진입할 것으로 예측됩니다."
+    },
+    "nudge": {
+      "type": "delay",
+      "message": "💡 현재 진입 시 매우 혼잡합니다. 17시 이후 방문을 추천합니다.",
+      "reason": "15~16시 피크 이후 17시부터 인구가 감소세로 전환되며, 혼잡도가 약 25% 완화됩니다.",
+      "alternativeTime": "17:00",
+      "expectedReduction": "25%"
+    },
+    "proxySignals": {
+      "subwayExitRate": {
+        "current": 1350,
+        "trend": "increasing",
+        "anomaly": false,
+        "description": "홍대입구역 하차 인원이 평소 토요일 대비 12% 높음"
+      },
+      "weatherImpact": {
+        "factor": 1.05,
+        "description": "맑은 날씨(22°C)로 야외 활동 인구 5% 증가 예상"
+      }
+    }
+  }
+}

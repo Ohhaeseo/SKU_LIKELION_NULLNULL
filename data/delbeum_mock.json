@@ -1,0 +1,298 @@
+{
+  "snapshot": {
+    "updatedAt": "오늘 14:30",
+    "weather": "맑음",
+    "temperature": 22,
+    "cityStatus": "홍대입구 혼잡도 매우 높음",
+    "assistantName": "널널 AI",
+    "serviceMode": "demo"
+  },
+  "user": {
+    "name": "해서",
+    "language": "한국어",
+    "savedScheduleCount": 2,
+    "favoritePlaceCount": 3,
+    "recentSearchCount": 5
+  },
+  "apiStatus": [
+    {
+      "id": "seoul-citydata",
+      "name": "서울 실시간 도시데이터",
+      "status": "ready",
+      "needs": "서울 열린데이터광장 API 인증키",
+      "usingNow": "주요 장소별 현재 인구, 혼잡도, 날씨 표시"
+    },
+    {
+      "id": "subway-ridership",
+      "name": "지하철 승하차/역 혼잡 데이터",
+      "status": "ready",
+      "needs": "공공데이터포털 또는 서울교통공사 데이터 접근",
+      "usingNow": "역별 승하차 증가율을 혼잡도 보정 신호로 반영"
+    },
+    {
+      "id": "weather",
+      "name": "기상청 단기예보",
+      "status": "ready",
+      "needs": "공공데이터포털 ServiceKey",
+      "usingNow": "강수확률, 기온, 야외활동 가능 여부 표시"
+    },
+    {
+      "id": "route",
+      "name": "대중교통 길찾기",
+      "status": "ready",
+      "needs": "ODsay 또는 유사 경로 API Key",
+      "usingNow": "2호선 이동, 출구 우회, 도보 시간 표시"
+    }
+  ],
+  "places": [
+    {
+      "id": "hongdae",
+      "name": "홍대입구역",
+      "area": "마포구",
+      "theme": "street, music, nightlife",
+      "level": "매우 혼잡",
+      "levelCode": 4,
+      "population": 62000,
+      "forecastPopulation": 72000,
+      "forecastTime": "오후 3시",
+      "trend": "+16%",
+      "statusColor": "#D45A52",
+      "description": "공연 종료와 약속 이동이 겹쳐 출구 주변 보행 속도가 크게 낮아진 상태입니다.",
+      "bestTime": "오후 5시 이후",
+      "risk": "홍대입구역 9번 출구와 걷고싶은거리 중심부 혼잡이 예상됩니다.",
+      "alternatives": ["yeonnam", "mangwon", "euljiro"],
+      "coordinates": { "lat": 37.5571, "lng": 126.9244 }
+    },
+    {
+      "id": "yeonnam",
+      "name": "연남동",
+      "area": "마포구",
+      "theme": "cafe, food, walk",
+      "level": "보통",
+      "levelCode": 2,
+      "population": 43000,
+      "forecastPopulation": 41000,
+      "forecastTime": "오후 3시",
+      "trend": "-4%",
+      "statusColor": "#E4D45E",
+      "description": "홍대와 분위기는 비슷하지만 골목 단위로 인파가 분산되어 대체 목적지로 적합합니다.",
+      "bestTime": "지금 이동 가능",
+      "risk": "인기 카페 앞 짧은 대기만 발생할 수 있습니다.",
+      "alternatives": ["mangwon", "euljiro"],
+      "coordinates": { "lat": 37.5623, "lng": 126.9238 }
+    },
+    {
+      "id": "mangwon",
+      "name": "망원동",
+      "area": "마포구",
+      "theme": "market, cafe, local",
+      "level": "낮음",
+      "levelCode": 1,
+      "population": 28500,
+      "forecastPopulation": 29200,
+      "forecastTime": "오후 3시",
+      "trend": "+2%",
+      "statusColor": "#79B365",
+      "description": "실내 식당과 카페가 많고 홍대에서 가까워 비가 오거나 혼잡할 때 좋은 대체 코스입니다.",
+      "bestTime": "지금 출발 추천",
+      "risk": "시장 내부 일부 구간은 점심 이후 짧게 붐빌 수 있습니다.",
+      "alternatives": ["yeonnam", "euljiro"],
+      "coordinates": { "lat": 37.5557, "lng": 126.9106 }
+    },
+    {
+      "id": "myeongdong",
+      "name": "명동",
+      "area": "중구",
+      "theme": "shopping, food, tourist",
+      "level": "혼잡",
+      "levelCode": 3,
+      "population": 43800,
+      "forecastPopulation": 51000,
+      "forecastTime": "오후 3시",
+      "trend": "+14%",
+      "statusColor": "#D88B35",
+      "description": "상점가와 음식 거리 쪽으로 방문객이 몰려 이동 여유가 줄고 있습니다.",
+      "bestTime": "오후 4시 30분 이후",
+      "risk": "명동역 6번 출구 주변 보행 정체가 예상됩니다.",
+      "alternatives": ["euljiro", "gyeongbokgung"],
+      "coordinates": { "lat": 37.5636, "lng": 126.9826 }
+    },
+    {
+      "id": "gyeongbokgung",
+      "name": "경복궁",
+      "area": "종로구",
+      "theme": "history, palace, photo",
+      "level": "낮음",
+      "levelCode": 1,
+      "population": 9800,
+      "forecastPopulation": 8700,
+      "forecastTime": "오후 3시",
+      "trend": "-8%",
+      "statusColor": "#79B365",
+      "description": "관람객이 넓게 분산되어 있고 주변 카페 이동도 안정적입니다.",
+      "bestTime": "오전 방문 추천",
+      "risk": "입장 마감 시간을 확인해야 합니다.",
+      "alternatives": ["euljiro", "myeongdong"],
+      "coordinates": { "lat": 37.5796, "lng": 126.977 }
+    },
+    {
+      "id": "seongsu",
+      "name": "성수 카페거리",
+      "area": "성동구",
+      "theme": "cafe, popup, fashion",
+      "level": "낮음",
+      "levelCode": 1,
+      "population": 14800,
+      "forecastPopulation": 16500,
+      "forecastTime": "오후 3시",
+      "trend": "+7%",
+      "statusColor": "#79B365",
+      "description": "카페와 팝업 동선이 분산되어 있어 지금 이동하기 좋습니다.",
+      "bestTime": "지금 출발 추천",
+      "risk": "일부 인기 팝업 앞 대기만 짧게 발생합니다.",
+      "alternatives": ["euljiro", "yeouido"],
+      "coordinates": { "lat": 37.5446, "lng": 127.0557 }
+    },
+    {
+      "id": "euljiro",
+      "name": "을지로",
+      "area": "중구",
+      "theme": "local food, cafe, indoor",
+      "level": "낮음",
+      "levelCode": 1,
+      "population": 13200,
+      "forecastPopulation": 15100,
+      "forecastTime": "오후 3시",
+      "trend": "+5%",
+      "statusColor": "#79B365",
+      "description": "실내 식당과 카페 선택지가 많고 명동에서 가까운 대체 코스입니다.",
+      "bestTime": "지금 출발 추천",
+      "risk": "골목 길찾기 안내가 필요할 수 있습니다.",
+      "alternatives": ["seongsu", "gyeongbokgung"],
+      "coordinates": { "lat": 37.5663, "lng": 126.9919 }
+    },
+    {
+      "id": "yeouido",
+      "name": "여의도 한강공원",
+      "area": "영등포구",
+      "theme": "river, picnic, walk",
+      "level": "보통",
+      "levelCode": 2,
+      "population": 18800,
+      "forecastPopulation": 16000,
+      "forecastTime": "오후 3시",
+      "trend": "-10%",
+      "statusColor": "#7494EA",
+      "description": "날씨가 좋아 산책 인원은 있지만 넓게 분산되어 이동은 안정적입니다.",
+      "bestTime": "지금 이동 가능",
+      "risk": "자전거 도로와 피크닉 구역은 일부 붐빌 수 있습니다.",
+      "alternatives": ["seongsu", "euljiro"],
+      "coordinates": { "lat": 37.5285, "lng": 126.9344 }
+    }
+  ],
+  "assistant": {
+    "risk": {
+      "title": "매우 위험",
+      "message": "인구 밀집도와 지하철 혼잡이 동시에 높아요.",
+      "caption": "대기 시간이 길거나 계획에 차질이 생길 수 있어요.",
+      "confidence": "86%",
+      "etaImpact": "+12분",
+      "crowdReduction": "48%"
+    },
+    "recommendations": [
+      {
+        "title": "시간 조정",
+        "message": "오후 5시 이후에 방문하면 혼잡도가 40% 줄어요. 조금만 기다려요!"
+      },
+      {
+        "title": "연남동",
+        "meta": "혼잡도 보통 · 홍대와 10분거리",
+        "message": "카페와 음식점 분위기가 비슷하고 도보 이동이 비교적 쾌적해요."
+      },
+      {
+        "title": "망원동",
+        "meta": "혼잡도 낮음 · 홍대와 분위기 비슷",
+        "message": "실내 식당과 카페 선택지가 많고 홍대에서 가까운 대체 코스로 좋아요."
+      }
+    ],
+    "chatSeed": [
+      {
+        "from": "bot",
+        "text": "안녕하세요! 홍대입구 분석 결과 지금은 좀 혼잡해요. 궁금한 게 있으면 뭐든 물어보세요!"
+      },
+      {
+        "from": "user",
+        "text": "연남동이 홍대랑 얼마나 비슷해요?"
+      },
+      {
+        "from": "bot",
+        "text": "연남동은 홍대 바로 옆 동네예요. 카페·음식점 분위기가 비슷하고 걸어서 10분 거리예요. 지금 혼잡도는 홍대보다 훨씬 낮아요!"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "id": "balanced",
+      "name": "추천 경로",
+      "time": "30분",
+      "walk": "8분",
+      "fare": "1,400원",
+      "crowd": "보통",
+      "comfort": 78,
+      "summary": "강남역에서 2호선 이용, 홍대입구 2번 출구로 우회",
+      "assistantNote": "9번 출구 대신 2번 출구를 이용하면 출구 혼잡을 피할 수 있습니다.",
+      "steps": [
+        { "type": "walk", "label": "강남역 2호선 승강장으로 이동", "time": "5분", "icon": "male" },
+        { "type": "subway", "label": "2호선 강남역 승차 후 홍대입구역 하차", "time": "20분", "line": "2", "color": "#79B365" },
+        { "type": "walk", "label": "2번 출구 이용 후 목적지까지 도보", "time": "5분", "icon": "male" }
+      ]
+    },
+    {
+      "id": "fast",
+      "name": "빠른 경로",
+      "time": "27분",
+      "walk": "6분",
+      "fare": "1,400원",
+      "crowd": "높음",
+      "comfort": 52,
+      "summary": "홍대입구 9번 출구 최단 접근",
+      "assistantNote": "가장 빠르지만 현재 가장 붐비는 출구를 통과합니다.",
+      "steps": [
+        { "type": "walk", "label": "강남역 2호선 승강장으로 이동", "time": "5분", "icon": "male" },
+        { "type": "subway", "label": "2호선 강남역 승차 후 홍대입구역 하차", "time": "19분", "line": "2", "color": "#79B365" },
+        { "type": "walk", "label": "9번 출구로 최단 이동", "time": "3분", "icon": "male" }
+      ]
+    }
+  ],
+  "itinerary": {
+    "draftStops": [
+      { "id": "gyeongbok", "name": "경복궁", "meta": "오전 추천 · 실외 추천", "crowd": "낮음", "line": "3호선", "move": "이동 15분" },
+      { "id": "hongdae", "name": "홍대 입구", "meta": "오후 추천 · 상권", "crowd": "중간", "line": "2호선", "move": "이동 20분" },
+      { "id": "myeongdong", "name": "명동", "meta": "저녁 추천 · 쇼핑", "crowd": "낮음", "line": "4호선", "move": "이동 30분" }
+    ],
+    "savedPlans": [
+      { "title": "서울 당일치기 코스", "route": "경복궁 → 홍대 → 명동", "meta": "총 3곳 이동 65분", "tag": "동선 최적화" },
+      { "title": "성수 건대 투어", "route": "성수 → 건대", "meta": "총 2곳 이동15분", "tag": "저장됨" }
+    ]
+  },
+  "mapRankings": [
+    { "name": "서교동", "people": "64k", "level": "매우 혼잡", "color": "#D45A52" },
+    { "name": "신촌동", "people": "58k", "level": "혼잡", "color": "#D88B35" },
+    { "name": "연남동", "people": "43k", "level": "보통", "color": "#E4D45E" },
+    { "name": "여의도동", "people": "40k", "level": "보통", "color": "#E4D45E" },
+    { "name": "명동", "people": "38k", "level": "보통", "color": "#E4D45E" },
+    { "name": "강남역", "people": "36k", "level": "보통", "color": "#E4D45E" },
+    { "name": "성수동", "people": "31k", "level": "낮음", "color": "#79B365" },
+    { "name": "망원동", "people": "28k", "level": "낮음", "color": "#79B365" },
+    { "name": "을지로", "people": "24k", "level": "낮음", "color": "#79B365" },
+    { "name": "경복궁", "people": "18k", "level": "낮음", "color": "#79B365" }
+  ],
+  "forecastSeries": [
+    { "time": "14:30", "seoulApiPopulation": 48000, "aiNowcast": 60000, "aiForecast30min": 72000 },
+    { "time": "15:00", "seoulApiPopulation": 56000, "aiNowcast": 72000, "aiForecast30min": 78000 },
+    { "time": "15:30", "seoulApiPopulation": 54000, "aiNowcast": 69000, "aiForecast30min": 65000 },
+    { "time": "16:00", "seoulApiPopulation": 50000, "aiNowcast": 61000, "aiForecast30min": 56000 },
+    { "time": "16:30", "seoulApiPopulation": 47000, "aiNowcast": 57000, "aiForecast30min": 52000 },
+    { "time": "17:00", "seoulApiPopulation": 43000, "aiNowcast": 50000, "aiForecast30min": 46000 }
+  ]
+}
