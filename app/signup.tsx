@@ -30,7 +30,7 @@ export default function SignupScreen() {
       return;
     }
     saveSignup(form);
-    router.replace('/(tabs)');
+    router.replace('/home' as never);
   };
 
   return (

@@ -28,7 +28,7 @@ export default function LoginScreen() {
       return;
     }
     rememberLogin(id.trim() || '해서', method);
-    router.replace('/(tabs)' as never);
+    router.replace('/home' as never);
   };
 
   return (
