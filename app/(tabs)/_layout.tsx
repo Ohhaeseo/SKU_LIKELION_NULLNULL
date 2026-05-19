@@ -1,10 +1,12 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 
 import { FloatingAiAssistant } from '@/components/FloatingAiAssistant';
 import Colors from '@/constants/Colors';
+
+const logoImage = require('../../pdf/LOGO.jpg');
 
 export const unstable_settings = {
   initialRouteName: 'home',
@@ -25,27 +27,27 @@ function TabBarIcon({
     return (
       <View
         style={{
-          width: 60,
-          height: 60,
-          borderRadius: 30,
-          backgroundColor: focused ? Colors.light.tint : '#8A8F9C',
+          width: 62,
+          height: 62,
+          borderRadius: 31,
+          backgroundColor: '#FFFFFF',
           alignItems: 'center',
           justifyContent: 'center',
-          borderWidth: 8,
-          borderColor: '#FFFFFF',
+          borderWidth: focused ? 3 : 2,
+          borderColor: focused ? Colors.light.tint : '#E2E8F8',
           marginBottom: 24,
-          shadowColor: '#6F8DEB',
-          shadowOpacity: 0.25,
-          shadowRadius: 10,
-          shadowOffset: { width: 0, height: 5 },
+          shadowColor: '#4368D7',
+          shadowOpacity: focused ? 0.32 : 0.18,
+          shadowRadius: 14,
+          shadowOffset: { width: 0, height: 8 },
         }}
       >
-        <FontAwesome name="home" size={26} color="#FFFFFF" />
+        <Image source={logoImage} style={{ width: 42, height: 42, borderRadius: 13 }} resizeMode="cover" />
       </View>
     );
   }
 
-  return <FontAwesome name={name} size={24} color={color} />;
+  return <FontAwesome name={name} size={23} color={color} />;
 }
 
 function NullIcon({ color }: { color: string }) {
@@ -62,20 +64,23 @@ export default function TabLayout() {
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: colors.tint,
-          tabBarInactiveTintColor: '#B8B8B8',
+          tabBarInactiveTintColor: '#AEB4C1',
           tabBarStyle: {
             height: 92,
-            paddingTop: 13,
-            paddingBottom: 14,
-            backgroundColor: colors.card,
-            borderTopColor: '#F0F0F0',
+            paddingTop: 12,
+            paddingBottom: 13,
+            backgroundColor: '#FFFFFF',
+            borderTopColor: '#EEF1F6',
             borderTopWidth: 1,
-            elevation: 0,
-            shadowOpacity: 0,
+            elevation: 18,
+            shadowColor: '#233B72',
+            shadowOpacity: 0.08,
+            shadowRadius: 20,
+            shadowOffset: { width: 0, height: -8 },
           },
           tabBarLabelStyle: {
             fontSize: 11,
-            fontWeight: '700',
+            fontWeight: '800',
             marginTop: 2,
           },
         }}
@@ -107,7 +112,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="two"
           options={{
-            title: '널널 AI',
+            title: 'AI 추천',
             tabBarIcon: ({ color }) => <NullIcon color={color} />,
           }}
         />

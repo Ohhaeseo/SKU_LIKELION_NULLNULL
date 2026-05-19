@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { Mascot, ScreenHeader, ui } from '@/components/AppChrome';
+import { ScreenHeader, ui } from '@/components/AppChrome';
 
 const weatherItems = [
   { label: '지금', icon: 'sun-o' as const, temp: '22°', active: true },
@@ -76,7 +76,6 @@ function EmptyHome({ onSearch }: { onSearch: () => void }) {
             <Text style={styles.liveValue}>혼잡</Text>
           </View>
         </View>
-        <Mascot size={120} style={styles.homeMascot} />
       </ScrollView>
     </>
   );
@@ -210,7 +209,6 @@ const styles = StyleSheet.create({
   },
   liveLabel: { color: '#6A7180', fontSize: 11, fontWeight: '800', marginTop: 8 },
   liveValue: { color: ui.blueDark, fontSize: 15, fontWeight: '900', marginTop: 6 },
-  homeMascot: { position: 'absolute', right: 4, bottom: 8 },
   resultContent: {
     minHeight: 668,
     paddingHorizontal: 34,

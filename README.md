@@ -3,7 +3,7 @@
 > 서울 여행과 이동을 조금 더 널널하게 만드는 혼잡도 예측 서비스
 
 <p align="center">
-  <img src="./pdf/스크린샷%202026-05-14%20101409.png" width="220" alt="널널 AI 캐릭터" />
+  <img src="./pdf/LOGO.jpg" width="180" alt="널널 AI 로고" />
 </p>
 
 <p align="center">

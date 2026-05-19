@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Polyline, Text as SvgText } from 'react-native-svg';
 
-import { Mascot, ScreenHeader, ui } from '@/components/AppChrome';
+import { ScreenHeader, ui } from '@/components/AppChrome';
 
 const aiPoints = [
   [36, 125],
@@ -104,7 +104,6 @@ export default function AssistantScreen() {
                 </SvgText>
               ))}
             </Svg>
-            <Mascot size={94} style={styles.chartMascot} />
           </View>
         </View>
 
@@ -120,7 +119,6 @@ export default function AssistantScreen() {
           ))}
         </View>
 
-        <Mascot size={74} style={styles.bottomMascot} />
       </ScrollView>
     </View>
   );
@@ -137,7 +135,6 @@ const styles = StyleSheet.create({
   legendDot: { width: 8, height: 8, borderRadius: 4, marginRight: 6 },
   legendText: { color: '#7D838F', fontSize: 10, fontWeight: '900' },
   chartWrap: { minHeight: 260, justifyContent: 'center' },
-  chartMascot: { position: 'absolute', right: -4, top: -12 },
   divider: { height: 1, backgroundColor: '#DADCE0', marginTop: 28, marginBottom: 30 },
   guideTitle: { color: '#6F727B', fontSize: 21, fontWeight: '900', marginBottom: 18 },
   guideCard: {
@@ -150,5 +147,4 @@ const styles = StyleSheet.create({
   },
   guideRow: { flexDirection: 'row', alignItems: 'center', minHeight: 42 },
   guideText: { flex: 1, color: '#596170', fontSize: 12, fontWeight: '900', marginLeft: 12, lineHeight: 18 },
-  bottomMascot: { alignSelf: 'flex-end', marginTop: 178 },
 });

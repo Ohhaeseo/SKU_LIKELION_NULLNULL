@@ -3,7 +3,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-import { Mascot, ScreenHeader, ui } from '@/components/AppChrome';
+import { ScreenHeader, ui } from '@/components/AppChrome';
 import mock from '@/data/delbeum_mock.json';
 
 type PageMode = 'profile' | 'saved';
@@ -137,7 +137,6 @@ function SavedPage({ onNew }: { onNew: () => void }) {
       <Pressable style={styles.newPlanButton} onPress={onNew}>
         <Text style={styles.newPlanText}>+ 새로운 일정 만들기</Text>
       </Pressable>
-      <Mascot size={170} style={styles.bigMascot} />
     </ScrollView>
   );
 }
@@ -233,5 +232,4 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   newPlanText: { color: '#FFFFFF', fontSize: 14, fontWeight: '900' },
-  bigMascot: { position: 'absolute', right: 14, bottom: 10 },
 });

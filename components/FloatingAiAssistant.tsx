@@ -1,8 +1,10 @@
 import { FontAwesome } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { ui } from '@/components/AppChrome';
+
+const logoImage = require('../pdf/LOGO.jpg');
 
 type ChatMessage = {
   from: 'bot' | 'user';
@@ -53,9 +55,12 @@ export function FloatingAiAssistant() {
       {open ? (
         <View style={styles.panel}>
           <View style={styles.header}>
-            <View>
-              <Text style={styles.title}>널널 AI</Text>
-              <Text style={styles.subtitle}>이동 상황 비서</Text>
+            <View style={styles.headerLeft}>
+              <Image source={logoImage} style={styles.headerLogo} resizeMode="cover" />
+              <View>
+                <Text style={styles.title}>널널 AI</Text>
+                <Text style={styles.subtitle}>이동 상황 비서</Text>
+              </View>
             </View>
             <Pressable style={styles.closeButton} onPress={() => setOpen(false)}>
               <FontAwesome name="close" size={15} color="#6E7480" />
@@ -97,7 +102,7 @@ export function FloatingAiAssistant() {
       ) : null}
 
       <Pressable style={styles.floatingButton} onPress={() => setOpen((value) => !value)}>
-        <Text style={styles.buttonLetter}>N</Text>
+        <Image source={logoImage} style={styles.buttonLogo} resizeMode="cover" />
       </Pressable>
     </View>
   );
@@ -115,22 +120,22 @@ const styles = StyleSheet.create({
     width: 58,
     height: 58,
     borderRadius: 29,
-    backgroundColor: ui.blue,
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: '#FFFFFF',
-    shadowColor: '#5D7FE8',
-    shadowOpacity: 0.35,
-    shadowRadius: 14,
+    shadowColor: '#4368D7',
+    shadowOpacity: 0.32,
+    shadowRadius: 16,
     shadowOffset: { width: 0, height: 8 },
     elevation: 12,
   },
-  buttonLetter: { color: '#FFFFFF', fontSize: 27, fontWeight: '900' },
+  buttonLogo: { width: 46, height: 46, borderRadius: 15 },
   panel: {
     width: 336,
     height: 470,
-    borderRadius: 24,
+    borderRadius: 26,
     backgroundColor: '#FFFFFF',
     marginBottom: 12,
     borderWidth: 1,
@@ -143,14 +148,17 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   header: {
-    height: 72,
+    height: 76,
     paddingHorizontal: 18,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: '#EEF1F6',
+    backgroundColor: '#FBFCFF',
   },
+  headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  headerLogo: { width: 38, height: 38, borderRadius: 12 },
   title: { color: ui.text, fontSize: 20, fontWeight: '900' },
   subtitle: { color: ui.blueDark, fontSize: 12, fontWeight: '800', marginTop: 3 },
   closeButton: {
@@ -164,8 +172,8 @@ const styles = StyleSheet.create({
   messages: { padding: 16, paddingBottom: 10 },
   botRow: { alignItems: 'flex-start', marginBottom: 10 },
   userRow: { alignItems: 'flex-end', marginBottom: 10 },
-  botBubble: { maxWidth: 252, borderRadius: 17, padding: 13, backgroundColor: ui.blueSoft },
-  userBubble: { maxWidth: 238, borderRadius: 17, padding: 13, backgroundColor: '#3C62A6' },
+  botBubble: { maxWidth: 252, borderRadius: 18, padding: 13, backgroundColor: ui.blueSoft },
+  userBubble: { maxWidth: 238, borderRadius: 18, padding: 13, backgroundColor: '#315CA8' },
   botText: { color: ui.blueDark, fontSize: 13, fontWeight: '800', lineHeight: 19 },
   userText: { color: '#FFFFFF', fontSize: 13, fontWeight: '800', lineHeight: 19 },
   quickRow: { flexDirection: 'row', gap: 7, paddingHorizontal: 14, paddingBottom: 10 },
@@ -186,7 +194,8 @@ const styles = StyleSheet.create({
     height: 44,
     borderRadius: 22,
     borderWidth: 1.5,
-    borderColor: ui.blue,
+    borderColor: '#C7D4FA',
+    backgroundColor: '#F8FAFF',
     paddingHorizontal: 16,
     color: ui.text,
     fontSize: 13,
