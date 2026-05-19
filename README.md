@@ -52,6 +52,17 @@
 - 정적 웹 export
 - 프론트엔드 mock 데이터 기반 프로토타입
 
+## 외부 참고 자료
+
+OpenAI Skills 저장소를 submodule로 연결했습니다.
+
+```bash
+git submodule update --init --recursive
+```
+
+- 위치: `external/openai-skills`
+- 원본: https://github.com/openai/skills.git
+
 ## 실행 방법
 
 ```bash
