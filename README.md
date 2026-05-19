@@ -54,14 +54,11 @@
 
 ## 외부 참고 자료
 
-OpenAI Skills 저장소를 submodule로 연결했습니다.
-
-```bash
-git submodule update --init --recursive
-```
+OpenAI Skills 저장소의 파일을 프로젝트 내부에 직접 포함했습니다.
 
 - 위치: `external/openai-skills`
 - 원본: https://github.com/openai/skills.git
+- 참고: submodule이 아니라 실제 파일로 포함되어 있어 별도 초기화 명령 없이 clone 후 바로 확인할 수 있습니다.
 
 ## 실행 방법
 
