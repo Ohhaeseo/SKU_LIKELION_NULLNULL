@@ -6,13 +6,17 @@ export const ui = {
   blue: '#6F8FF2',
   blueDark: '#244C9F',
   blueSoft: '#EEF4FF',
-  border: '#86A2F7',
-  text: '#0B1020',
-  muted: '#6C7484',
+  blueSoft2: '#F6F8FF',
+  border: '#A9BCFF',
+  borderSoft: '#E5EBFF',
+  text: '#111827',
+  muted: '#6B7280',
   gray: '#B9BBC1',
   danger: '#D45A52',
   warning: '#D99A33',
   safe: '#35A853',
+  surface: '#FFFFFF',
+  surfaceAlt: '#F8FAFF',
   homeDark: '#737987',
 };
 
@@ -52,13 +56,13 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#FFFFFF',
     borderBottomWidth: 1,
-    borderBottomColor: '#E8EBF1',
+    borderBottomColor: '#EEF1F6',
   },
   headerTitle: {
-    color: '#000000',
-    fontSize: 28,
+    color: ui.text,
+    fontSize: 27,
     fontWeight: '900',
     paddingHorizontal: 30,
-    paddingBottom: 18,
+    paddingBottom: 17,
   },
 });

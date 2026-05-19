@@ -36,9 +36,7 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topGlow} />
-      <View style={styles.bottomGlow} />
-
+      <View style={styles.topPanel} />
       <View style={styles.statusRow}>
         <Text style={styles.statusTime}>2:30</Text>
         <View style={styles.statusIcons}>
@@ -49,8 +47,9 @@ export default function LoginScreen() {
       </View>
 
       <View style={styles.hero}>
-        <Image source={logoImage} style={styles.logo} resizeMode="contain" />
-        <Text style={styles.quote}>"복잡한 도심 속, 당신을 위한 NULL을 찾아서"</Text>
+        <Image source={logoImage} style={styles.logo} resizeMode="cover" />
+        <Text style={styles.brand}>널널 AI</Text>
+        <Text style={styles.copy}>서울 이동을 더 가볍게 만드는 혼잡도 비서</Text>
       </View>
 
       {showForm ? (
@@ -77,29 +76,33 @@ export default function LoginScreen() {
         </View>
       ) : null}
 
-      <View style={styles.bottomArea}>
+      <View style={styles.bottomSheet}>
+        <Pressable style={styles.bigLoginButton} onPress={() => (showForm ? login() : setShowForm(true))}>
+          <Text style={styles.bigLoginText}>로그인</Text>
+        </Pressable>
+
+        <View style={styles.snsDivider}>
+          <View style={styles.line} />
+          <Text style={styles.snsText}>SNS LOGIN</Text>
+          <View style={styles.line} />
+        </View>
+
         <View style={styles.socialRow}>
-          <Pressable style={[styles.socialCircle, styles.naverButton]} onPress={() => login('네이버')}>
-            <Text style={styles.naverText}>N</Text>
-          </Pressable>
-          <Pressable style={styles.appleButton} onPress={() => login('Apple')}>
-            <FontAwesome name="apple" size={29} color="#111111" />
-          </Pressable>
-          <Pressable style={styles.googleButton} onPress={() => login('Google')}>
-            <Text style={styles.googleText}>G</Text>
-          </Pressable>
           <Pressable style={[styles.socialCircle, styles.kakaoButton]} onPress={() => login('카카오')}>
             <View style={styles.talkBubble}>
               <Text style={styles.talkText}>TALK</Text>
             </View>
           </Pressable>
+          <Pressable style={[styles.socialCircle, styles.naverButton]} onPress={() => login('네이버')}>
+            <Text style={styles.naverText}>N</Text>
+          </Pressable>
+          <Pressable style={[styles.socialCircle, styles.googleButton]} onPress={() => login('Google')}>
+            <Text style={styles.googleText}>G</Text>
+          </Pressable>
         </View>
 
-        <Pressable style={styles.idLoginButton} onPress={() => setShowForm((value) => !value)}>
-          <Text style={styles.idLoginText}>{showForm ? '아이디 로그인 닫기' : '아이디로 로그인'}</Text>
-        </Pressable>
         <Pressable style={styles.signupButton} onPress={() => router.push('/signup' as never)}>
-          <Text style={styles.signupText}>처음이신가요? 회원가입</Text>
+          <Text style={styles.signupText}>회원가입</Text>
         </Pressable>
       </View>
     </View>
@@ -107,28 +110,14 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#87A8F5',
-    overflow: 'hidden',
-  },
-  topGlow: {
+  container: { flex: 1, backgroundColor: '#6F8FF2', overflow: 'hidden' },
+  topPanel: {
     position: 'absolute',
-    left: -80,
-    top: -90,
-    width: 260,
-    height: 260,
-    borderRadius: 130,
-    backgroundColor: 'rgba(255,255,255,0.16)',
-  },
-  bottomGlow: {
-    position: 'absolute',
-    right: -120,
-    bottom: -120,
-    width: 330,
-    height: 330,
-    borderRadius: 165,
-    backgroundColor: 'rgba(255,255,255,0.14)',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 365,
+    backgroundColor: '#7D9BF4',
   },
   statusRow: {
     height: 58,
@@ -139,42 +128,34 @@ const styles = StyleSheet.create({
   },
   statusTime: { color: '#FFFFFF', fontSize: 16, fontWeight: '900' },
   statusIcons: { flexDirection: 'row', gap: 8 },
-  hero: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 80,
-  },
+  hero: { height: 318, alignItems: 'center', justifyContent: 'center', paddingBottom: 22 },
   logo: {
-    width: 178,
-    height: 178,
-    borderRadius: 38,
-    marginBottom: 32,
+    width: 142,
+    height: 142,
+    borderRadius: 34,
+    marginBottom: 22,
+    borderWidth: 6,
+    borderColor: 'rgba(255,255,255,0.35)',
   },
-  quote: {
-    color: '#FFFFFF',
-    fontSize: 15,
-    fontWeight: '900',
-    textAlign: 'center',
-    textShadowColor: 'rgba(50, 80, 160, 0.16)',
-    textShadowRadius: 8,
-  },
+  brand: { color: '#FFFFFF', fontSize: 34, fontWeight: '900', marginBottom: 8 },
+  copy: { color: '#EDF3FF', fontSize: 14, fontWeight: '800' },
   loginCard: {
     position: 'absolute',
-    left: 26,
-    right: 26,
-    bottom: 170,
-    borderRadius: 22,
-    backgroundColor: 'rgba(255,255,255,0.94)',
+    left: 28,
+    right: 28,
+    bottom: 268,
+    borderRadius: 24,
+    backgroundColor: '#FFFFFF',
     padding: 17,
-    shadowColor: '#4169D8',
-    shadowOpacity: 0.22,
+    shadowColor: '#244C9F',
+    shadowOpacity: 0.18,
     shadowRadius: 18,
     shadowOffset: { width: 0, height: 10 },
+    elevation: 10,
   },
   input: {
     height: 48,
-    borderRadius: 15,
+    borderRadius: 16,
     backgroundColor: '#F4F7FF',
     paddingHorizontal: 16,
     color: '#111827',
@@ -192,66 +173,54 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   primaryText: { color: '#FFFFFF', fontSize: 15, fontWeight: '900' },
-  bottomArea: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 44,
+  bottomSheet: {
+    flex: 1,
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 32,
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 36,
+    paddingTop: 32,
     alignItems: 'center',
   },
-  socialRow: {
-    flexDirection: 'row',
+  bigLoginButton: {
+    width: '100%',
+    height: 58,
+    borderRadius: 17,
+    backgroundColor: '#6F8FF2',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 19,
-    marginBottom: 20,
+    shadowColor: '#6F8FF2',
+    shadowOpacity: 0.28,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 8,
   },
+  bigLoginText: { color: '#FFFFFF', fontSize: 22, fontWeight: '900' },
+  snsDivider: { flexDirection: 'row', alignItems: 'center', width: '100%', marginTop: 48, marginBottom: 30 },
+  line: { flex: 1, height: 1, backgroundColor: '#DADDE5' },
+  snsText: { color: '#7A8292', fontSize: 15, fontWeight: '900', marginHorizontal: 16 },
+  socialRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 28 },
   socialCircle: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  naverButton: { backgroundColor: '#57C43A' },
-  naverText: { color: '#FFFFFF', fontSize: 27, fontWeight: '900' },
-  appleButton: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  googleButton: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  googleText: { color: '#D85043', fontSize: 25, fontWeight: '900' },
-  kakaoButton: { backgroundColor: '#F5E84A' },
+  kakaoButton: { backgroundColor: '#F8E74B' },
   talkBubble: {
-    width: 31,
-    height: 24,
-    borderRadius: 13,
+    width: 36,
+    height: 28,
+    borderRadius: 15,
     backgroundColor: '#111111',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  talkText: { color: '#F5E84A', fontSize: 9, fontWeight: '900' },
-  idLoginButton: {
-    height: 34,
-    borderRadius: 17,
-    paddingHorizontal: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(255,255,255,0.18)',
-    marginBottom: 8,
-  },
-  idLoginText: { color: '#FFFFFF', fontSize: 13, fontWeight: '900' },
-  signupButton: { paddingVertical: 4 },
-  signupText: { color: '#FFFFFF', fontSize: 12, fontWeight: '800', opacity: 0.92 },
+  talkText: { color: '#F8E74B', fontSize: 10, fontWeight: '900' },
+  naverButton: { backgroundColor: '#55C63B' },
+  naverText: { color: '#FFFFFF', fontSize: 34, fontWeight: '900' },
+  googleButton: { backgroundColor: '#D95043' },
+  googleText: { color: '#FFFFFF', fontSize: 34, fontWeight: '900' },
+  signupButton: { marginTop: 26, height: 42, paddingHorizontal: 22, alignItems: 'center', justifyContent: 'center' },
+  signupText: { color: '#50607C', fontSize: 14, fontWeight: '900' },
 });
